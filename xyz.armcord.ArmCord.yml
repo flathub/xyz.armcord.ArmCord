@@ -17,7 +17,10 @@ finish-args:
   - --share=ipc
   - --share=network
   - --talk-name=org.freedesktop.Notifications # Discord push notifs
-  - --talk-name=org.kde.StatusNotifierItem-3-1 # Needed for the tray icon, at least supposedly
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=com.canonical.AppMenu.Registrar
+  - --talk-name=com.canonical.indicator.application
+  - --talk-name=com.canonical.Unity.LauncherEntry
   - --device=all # Needed for GPU acceleration and the webcam
   - --filesystem=xdg-videos:ro
   - --filesystem=xdg-pictures:ro
