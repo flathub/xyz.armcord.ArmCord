@@ -17,6 +17,8 @@ finish-args:
   - --share=ipc
   - --share=network
   - --talk-name=org.freedesktop.Notifications # Discord push notifs
+  - --own-name=org.kde.* # It's hacky, and a major security vulnerability, but we need this permission to have a working tray icon. 
+  # Other apps do this too, so it's not really a major worry....
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.indicator.application
