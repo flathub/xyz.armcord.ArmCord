@@ -10,19 +10,13 @@ base-version: '22.08'
 command: startarmcord
 separate-locales: false
 
-finish-args:
+finish-args: # We aren't trying to get tray icons working here for several reasons, mainly I'm too stressed to figure them out. -Oro
   - --socket=pulseaudio
   - --socket=wayland # End users can actually *use* the Wayland backend by setting the USE_WAYLAND environment variable to 1
   - --socket=x11
   - --share=ipc
   - --share=network
   - --talk-name=org.freedesktop.Notifications # Discord push notifs
-  - --own-name=org.kde.* # It's hacky, and a major security vulnerability, but we need this permission to have a working tray icon. 
-  # Other apps do this too, so it's not really a major worry....
-  - --talk-name=org.kde.StatusNotifierWatcher
-  - --talk-name=com.canonical.AppMenu.Registrar
-  - --talk-name=com.canonical.indicator.application
-  - --talk-name=com.canonical.Unity.LauncherEntry
   - --device=all # Needed for GPU acceleration and the webcam
   - --filesystem=xdg-videos:ro
   - --filesystem=xdg-pictures:ro
