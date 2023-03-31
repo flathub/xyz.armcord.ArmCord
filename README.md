@@ -24,5 +24,5 @@ Flatpak applications need certain changes inside of the flatpak environment to c
 
 Suggested changes to accomplish these needs :
 
-1. Add `--filesystem=xdg-run/.flatpak/com.xyz.armcord.ArmCord:create` and `$XDG_RUNTIME_DIR=discord-ipc-*`
+1. Add `--filesystem=xdg-run/.flatpak/com.xyz.armcord.ArmCord:create` and `--filesystem=xdg-run/discord-ipc-*` to the global Flatpak permissions
 2. Restart
