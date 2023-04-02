@@ -2,6 +2,12 @@
 
 This is the flatpak for ArmCord. Due to sandbox limitations, it might not function as expected, so some ways to get it working are detailed below:
 
+## Tray icons
+
+This flatpak has the appropriate permissions for tray icons out of the box; however, GNOME does not provide native tray icons support out of the box, due to the current specification being *horribly* outdated and not being sandbox-friendly.
+
+The extension that should be used to obtain tray icons is [appindicator-support](https://extensions.gnome.org/extension/615/appindicator-support/). Enable this extension and disable any other alternatives and tray icons will function as expected.
+
 ## Discord Rich Presence
 ### Native applications
 A solution that works short-term is to run `ln -sf $XDG_RUNTIME_DIR/{.flatpak/xyz.armcord.ArmCord/xdg-run,}/discord-ipc-0`. 
