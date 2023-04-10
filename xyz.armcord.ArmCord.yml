@@ -45,8 +45,8 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.1.7.AppImage
-        sha512: f4345223c4f14e9d8c112e5943d0cbeda526ca537ccabcb18d4c4bd613591da15707f45b97bad9af0b72bf305ffb6895d704bb532510eb1210be049c6196aaba
+        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.1.7.AppImage
+        sha512: c859db7a50778788ba3a864a3ffacd561b38bf1cfd582cf8b68d7dbf0fd7fd8aa0090ae5fedc7de736cb78d104980fb5034fbd33d23354f37d0b7d6380c382c0
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
