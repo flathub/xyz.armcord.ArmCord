@@ -50,13 +50,13 @@ modules:
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
-          url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux.yml
+          url: https://build.armcord.xyz/stable/v21.4.4/latest-linux.yml
 
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.1.7-arm64.AppImage
-        sha512: cbc58f69a003470ed3bf1e9cc48b8a7b2e1919a1b89f9c76283931cae8433f420ec0856edb92d7b957ed799e464ba4d135482ae1f161ef447955347e4f03485a
+        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.1.7-arm64.AppImage
+        sha512: a8ca1399cc97eba21722a67e12de7aab8c43fd616dc6bea2d124c5f7b1934c94b37c5d487adfff3123b188ad29ee57ad1795db174c2b0a6c10c655c2a6028685
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
-          url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux-arm64.yml
+          url: https://build.armcord.xyz/stable/v21.4.4/latest-linux-arm64.yml
 
