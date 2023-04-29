@@ -5,25 +5,24 @@ FEATURES="UseSkiaRenderer"
 TMPDIR="$XDG_RUNTIME_DIR/app/${FLATPAK_ID:-xyz.armcord.ArmCord}"
 declare -a FLAGS=(--enable-gpu-rasterization --enable-zero-copy --enable-gpu-compositing --enable-native-gpu-memory-buffers --enable-oop-rasterization)
 
-if [[ "${XDG_SESSION_TYPE,,}" = "wayland" ]]; then
-
-    echo "Using Wayland; enabling PipeWire for video capture"
+if [[ $XDG_SESSION_TYPE == "wayland" ]]
+then
+    echo "Using Wayland, enabling PipeWire for video capture"
     FEATURES="${FEATURES},WebRTCPipeWireCapturer"
+fi
 
-    if [[ ${USE_WAYLAND} -eq 1 ]]; then
-        echo "USE_WAYLAND set, using the Wayland Electron backend"
-        FEATURES="$FEATURES,UseOzonePlatform,WaylandWindowDecorations"
-        FLAGS+=(-ozone-platform=wayland)
-    elif [[ ${USE_WAYLAND} -ne 1 ]]; then
-        echo "USE_WAYLAND not set, running through Xwayland"
-    fi
+WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
+if [[ $XDG_SESSION_TYPE == "wayland" ]] && [[ -e "$XDG_RUNTIME_DIR/${WAYLAND_SOCKET}" ]]
+then
+    echo "Wayland is not accessible, running through Xwayland"
+    FLAGS+=(--ozone-platform=wayland)
+    FEATURES="$FEATURES,UseOzonePlatform,WaylandWindowDecorations"
+fi
 
-    # Just your normal NVIDIA things
-    if [[ -c /dev/nvidia0 ]]; then
-        echo "Using NVIDIA on Wayland, applying workaround"
-        FLAGS+=(--disable-gpu-sandbox)
-    fi
-
+# Just your normal NVIDIA things
+if [[ $XDG_SESSION_TYPE == "wayland" ]] && [[ -c /dev/nvidia0 ]]; then
+    echo "Using NVIDIA on Wayland, applying workaround"
+    FLAGS+=(--disable-gpu-sandbox)
 fi
 
 FLAGS+=(--enable-features="${FEATURES}")
