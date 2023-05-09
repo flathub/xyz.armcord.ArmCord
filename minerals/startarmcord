@@ -3,20 +3,12 @@
 # Set FEATURES to what goes after --enable-features; for example, UseSkiaRenderer,WebRTCPipeWireCapturer,etc,etc will then get turned into --enable-features=UseSkiaRenderer,WebRTCPipeWireCapturer,etc,etc.
 FEATURES="UseSkiaRenderer"
 TMPDIR="$XDG_RUNTIME_DIR/app/${FLATPAK_ID:-xyz.armcord.ArmCord}"
-declare -a FLAGS=(--enable-gpu-rasterization --enable-zero-copy --enable-gpu-compositing --enable-native-gpu-memory-buffers --enable-oop-rasterization)
+declare -a FLAGS=(--enable-gpu-rasterization --enable-zero-copy --enable-gpu-compositing --enable-native-gpu-memory-buffers --enable-oop-rasterization --ozone-platform-hint=auto --ignore-gpu-blocklist)
 
 if [[ "${XDG_SESSION_TYPE,,}" = "wayland" ]]; then
 
     echo "Using Wayland; enabling PipeWire for video capture"
     FEATURES="${FEATURES},WebRTCPipeWireCapturer"
-
-    if [[ ${USE_WAYLAND} -eq 1 ]]; then
-        echo "USE_WAYLAND set, using the Wayland Electron backend"
-        FEATURES="$FEATURES,UseOzonePlatform,WaylandWindowDecorations"
-        FLAGS+=(-ozone-platform=wayland)
-    elif [[ ${USE_WAYLAND} -ne 1 ]]; then
-        echo "USE_WAYLAND not set, running through Xwayland"
-    fi
 
     # Just your normal NVIDIA things
     if [[ -c /dev/nvidia0 ]]; then
