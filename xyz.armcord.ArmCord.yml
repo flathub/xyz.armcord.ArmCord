@@ -45,16 +45,16 @@ modules:
 
     sources:
       - type: file
-        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.1.7.AppImage
-        sha512: c859db7a50778788ba3a864a3ffacd561b38bf1cfd582cf8b68d7dbf0fd7fd8aa0090ae5fedc7de736cb78d104980fb5034fbd33d23354f37d0b7d6380c382c0
+        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.2.0.AppImage
+        sha512: 330c8c7213888f659f99416c97b2222b5a1eb1b69c68abda27607baf8da86b929196743cb14730504636fb3b0af3a0527c96ebe8249d4f6d6a85c9db26bb63e0
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
           url: https://build.armcord.xyz/stable/v21.4.4/latest-linux.yml
 
       - type: file
-        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.1.7-arm64.AppImage
-        sha512: a8ca1399cc97eba21722a67e12de7aab8c43fd616dc6bea2d124c5f7b1934c94b37c5d487adfff3123b188ad29ee57ad1795db174c2b0a6c10c655c2a6028685
+        url: https://build.armcord.xyz/stable/v21.4.4/ArmCord-3.2.0-arm64.AppImage
+        sha512: 0588f587c7cbc9639bd916711fa5c1c7dd3ec7a4fda93696efa6912389cbc987964ba9ffe1f3e34cb76039ced7bc7a8caa9f1c468a714e5f9f058e948a39b06a
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
