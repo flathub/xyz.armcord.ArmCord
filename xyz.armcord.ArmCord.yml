@@ -46,7 +46,7 @@ modules:
     sources:
       - type: file
         url: https://build.armcord.xyz/dev/v21.4.4/ArmCord-3.2.0.AppImage
-        sha512: 9e86eff94cd6ed7994111ac35e53ac2e554c5eabbde202e0eb3168bc9ffa042ab170d83d605e34ad7ad1751ae03c165975e3ae78c065d1f9ce134f34dbec8696
+        sha512: ff7045cbc8e848e2f5db2ac72c837705f26175dc9dbaa87c35d8c0c58b461ee3d9b1b93848f73f183aac27b59d3e04fceb06fd69fcf69b7e58b96407736090e4
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
@@ -54,7 +54,7 @@ modules:
 
       - type: file
         url: https://build.armcord.xyz/dev/v21.4.4/ArmCord-3.2.0-arm64.AppImage
-        sha512: 5aa79c3ecd4f70682f836c8b5626d1e6d1e6037998d71a8fd6a3dd9f7c4add221def8ad689dbadfc61aa876245ccf3957032b13b1ed9e81020258c250b4f8fb4
+        sha512: 19b5bb866afb228685b179310d88cc3636bfff924287d388149a7e48a75ae902df8385e73f1c777858d6c9b5f082e05e3ce6e601c45e4947c6eab774b7d7558b
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
