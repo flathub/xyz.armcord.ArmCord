@@ -12,7 +12,6 @@ separate-locales: false
 
 finish-args: # We aren't trying to get tray icons working here for several reasons, mainly I'm too stressed to figure them out. -Oro
   - --socket=pulseaudio
-  - --socket=wayland # End users can actually *use* the Wayland backend by setting the USE_WAYLAND environment variable to 1
   - --socket=x11
   - --share=ipc
   - --share=network
