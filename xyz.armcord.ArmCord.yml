@@ -31,7 +31,6 @@ modules:
       - install -Dm755 minerals/startarmcord /app/bin/startarmcord
       - install -D minerals/xyz.armcord.ArmCord.desktop -t /app/share/applications/
       - install -D xyz.armcord.ArmCord.metainfo.xml -t /app/share/metainfo/
-      - install -D minerals/xyz.armcord.ArmCord-256.png /app/share/icons/hicolor/256x256/apps/xyz.armcord.ArmCord.png
     sources:
       - type: dir
         path: .
@@ -41,6 +40,7 @@ modules:
     build-commands:
       - chmod +x ArmCord*.AppImage
       - ./ArmCord*.AppImage --appimage-extract
+      - install -D squashfs-root/armcord.png /app/share/icons/hicolor/512x512/apps/xyz.armcord.ArmCord.png
       - mv squashfs-root /app/bin/armcord
 
     sources:
