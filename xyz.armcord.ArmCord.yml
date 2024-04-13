@@ -18,12 +18,23 @@ finish-args: # We aren't trying to get tray icons working here for several reaso
   - --talk-name=org.freedesktop.Notifications # Discord push notifs
   - --talk-name=org.kde.StatusNotifierWatcher # Tray functionalities on KDE
   - --device=all # Needed for GPU acceleration and the webcam
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --filesystem=xdg-videos:ro
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-download # This and the above two are used for drag-n-drop, and download managing
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons # This is used to show the correct cursor on Wayland
 
 modules:
+  - name: socat
+    sources:
+      - type: archive
+        url: http://www.dest-unreach.org/socat/download/socat-1.8.0.0.tar.gz
+        sha256: 6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82
+        x-checker-data:
+          type: anitya
+          project-id: 4848
+          url-template: http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
+
   - name: minerals
     buildsystem: simple
     build-commands:
@@ -59,3 +70,11 @@ modules:
           type: electron-updater
           url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux-arm64.yml
 
+      - type: file
+        url: http://www.dest-unreach.org/socat/download/socat-1.8.0.0.tar.gz
+        sha256: 6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82
+        only-arches: [aarch64]
+        x-checker-data:
+          type: anitya
+          project-id: 4848
+          url-template: http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
