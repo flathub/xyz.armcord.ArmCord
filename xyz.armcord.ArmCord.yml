@@ -32,7 +32,7 @@ modules:
         sha256: 6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82
         x-checker-data:
           type: anitya
-          project-id: 4848
+          project-id: 4847
           url-template: http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
 
   - name: minerals
@@ -69,12 +69,3 @@ modules:
         x-checker-data:
           type: electron-updater
           url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux-arm64.yml
-
-      - type: file
-        url: http://www.dest-unreach.org/socat/download/socat-1.8.0.0.tar.gz
-        sha256: 6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82
-        only-arches: [aarch64]
-        x-checker-data:
-          type: anitya
-          project-id: 4848
-          url-template: http://www.dest-unreach.org/socat/download/socat-$version.tar.gz
