@@ -4,5 +4,6 @@ Exec=startarmcord
 Terminal=false
 Type=Application
 Icon=xyz.armcord.ArmCord
+Categories=Network;InstantMessaging
 StartupWMClass=ArmCord
 Keywords=Discord;WebCord;
