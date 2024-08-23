@@ -44,16 +44,16 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.2.8.AppImage
-        sha512: 11dc017cc893bfb1feb0ab2663e0ef7cbee39f092249b9156f16cdcbd10eead1e2e6447bf0e2b771089bdf6f4a1940fc46ead6ac1248bfa14e805d275bec6ab9
+        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.3.0-linux-x86_64.AppImage
+        sha512: eaf90456c343284f749d3fb8d409754df3cc949cb1d31240fee3dfb99c7b858959b62f006f17d0dc2ec7d3d228099ed947cb16dd3705479f8efeabdc9dc634cd
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
           url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux.yml
 
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.2.8-arm64.AppImage
-        sha512: e18c52312e51550acf9997eb0f5abcff6f39e6dd2331d6e840de9ff909dbf4ec61e94873f76d0560a8c706b0d161112e61bc4bc504da2b6ecbfe08ee2a2ea3e4
+        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.3.0-linux-arm64.AppImage
+        sha512: a528cf12ce6396244408b5e3f4f664864fbcc18441d5954d8f54fe06eedc38e236abdbbf48f02b98e241a36da1e13d2b64ea54e3572135cbd6cf951d4bf6eea5
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
