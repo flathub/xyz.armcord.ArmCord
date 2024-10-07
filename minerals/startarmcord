@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+socat $SOCAT_ARGS \
+    UNIX-LISTEN:$XDG_RUNTIME_DIR/app/com.discordapp.Discord/discord-ipc-0,forever,fork \
+    UNIX-CONNECT:$XDG_RUNTIME_DIR/discord-ipc-0 \
+    &
+socat_pid=$!
+
 # Set FEATURES to what goes after --enable-features; for example, UseSkiaRenderer,WebRTCPipeWireCapturer,etc,etc will then get turned into --enable-features=UseSkiaRenderer,WebRTCPipeWireCapturer,etc,etc.
 FEATURES="UseSkiaRenderer"
 TMPDIR="$XDG_RUNTIME_DIR/app/${FLATPAK_ID:-xyz.armcord.ArmCord}"
@@ -37,3 +43,4 @@ fi
 FLAGS+=(--enable-features="${FEATURES}")
 echo "Passing the following arguments to Electron:" "${FLAGS[@]}"
 zypak-wrapper /app/bin/armcord/armcord "${FLAGS[@]}" "$@"
+kill -SIGTERM $socat_pid
