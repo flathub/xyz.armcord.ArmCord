@@ -46,16 +46,16 @@ modules:
 
     sources:
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.2.4.AppImage
-        sha512: 0eeedbf3ece783d770a75ea4c462a6ff3d5d222fe554f8c3d1884249c343dfc044c16498dd031b764f96e7d4a2edf768d19854dea806f221c3350a2586a3cd06
+        url: https://github.com/ArmCord/ArmCord/releases/latest/download/Legcord-1.0.8-linux-x86_64.AppImage
+        sha512: 351bde868cd3d579ea2ff2716319901a6e56a25bb5349e19b8f875d9ffe9a323e5c03a944d7b856b5951daf6b198983fcd5767567c454b6144305e9149843273
         only-arches: [x86_64]
         x-checker-data:
           type: electron-updater
           url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux.yml
 
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.2.4-arm64.AppImage
-        sha512: be7caa668f94560b11190878ea95e42822107114a4fd8636c5f04f4d087eae7f1ec3a0003a159bd480f561e8244a9b0d147fa09e8e6a414943ca1fd2bbed16ad
+        url: https://github.com/ArmCord/ArmCord/releases/latest/download/Legcord-1.0.8-linux-arm64.AppImage
+        sha512: b6126f9404be502b714b813a3920fbaab6a660249410bb8650b3c122f84149d5d84d2db2fd1fb11fe49f35cabec110fc9af3423408eed6626f88fd22f178547b
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
