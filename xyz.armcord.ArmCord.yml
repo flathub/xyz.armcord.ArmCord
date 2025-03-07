@@ -39,7 +39,8 @@ modules:
     build-commands:
       - chmod +x ArmCord*.AppImage
       - ./ArmCord*.AppImage --appimage-extract
-      - install -D squashfs-root/usr/share/icons/hicolor/512x512/apps/armcord.png /app/share/icons/hicolor/512x512/apps/xyz.armcord.ArmCord.png
+      - install -D squashfs-root/usr/share/icons/hicolor/512x512/apps/armcord.png
+        /app/share/icons/hicolor/512x512/apps/xyz.armcord.ArmCord.png
       - mv squashfs-root /app/bin/armcord
 
     sources:
@@ -52,8 +53,8 @@ modules:
           url: https://github.com/ArmCord/ArmCord/releases/latest/download/latest-linux.yml
 
       - type: file
-        url: https://github.com/ArmCord/ArmCord/releases/latest/download/ArmCord-3.3.1-linux-arm64.AppImage
-        sha512: a224e24c7a9b22882f75fd16ec16f2aaff6d374fa28030c2c47d9949284a7f48b7269949533906dde3841588425db493dcbf77d5a7421525da0970cf3b81d872
+        url: https://github.com/ArmCord/ArmCord/releases/latest/download/Legcord-1.1.0-linux-arm64.AppImage
+        sha512: 2f6d1f84975d577ef771fa3e77b8914a8b323812a8fc27d0ba498a0090ad835eda357d5847edee4fabd75e95de65cebfc791be499ec4997b7d4cdd7af47fec20
         only-arches: [aarch64]
         x-checker-data:
           type: electron-updater
